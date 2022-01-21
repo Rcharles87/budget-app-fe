@@ -5,15 +5,6 @@ import { Button } from "@mui/material";
 
 function Transaction({transaction, index}) {
 
-    // function ViewButton(){
-    //     let view = useNavigate()
-        
-    //     function handleClick(){
-    //         view.push(`/transactions/${index}`)
-    //     }
-    // }
-
-
     return (
         <Card>
             <Card.Body>
@@ -25,7 +16,7 @@ function Transaction({transaction, index}) {
                 <div className="text-muted fs-6 ms-1">{transaction.date}</div>
                 {/* </Link> */}
             </Card.Title>
-                <Button variant="outlined" href={`/transactions/${index}`}>View Transaction</Button>
+                <Button variant="outlined" component={Link} to={`/transactions/${index}`}>View Transaction</Button>
             </Card.Body>
         </Card>
     )
