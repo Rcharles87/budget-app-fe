@@ -33,8 +33,8 @@ function Transaction({transaction, index}) {
 
                         <Button 
                             style={{
-                                border: "1px solid #C5C392",
-                                color: "#C5C392"
+                                border: "1px solid #DD614A",
+                                color: "#DD614A"
                             }}
                             variant="outlined" 
                             component={Link} 
@@ -43,8 +43,8 @@ function Transaction({transaction, index}) {
                         </Button>
                         <Button 
                             style={{
-                                border: "1px solid #C5C392",
-                                color: "#C5C392"
+                                border: "1px solid #DD614A",
+                                color: "#DD614A"
                             }}
                             variant="outlined" 
                             onClick={handleDelete}

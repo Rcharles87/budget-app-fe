@@ -5,13 +5,13 @@ import "../index.css"
 function NavBar() {
     return (
         <div className="d-flex my-3 pt-3 color-nav p-3">
-            <h1 className="text-black">
-                <Link className="text-decoration-none text-black" to="/transactions">Budget App</Link>
+            <h1>
+                <Link className="text-decoration-none text-color-nav" to="/transactions">Budget App</Link>
             </h1>
             <Button 
                 style={{
-                    border: "1px solid #C5C392",
-                    color: "#C5C392"
+                    border: "1px solid #504F2A",
+                    color: "#504F2A"
                 }}
                 className="ms-auto "  
                 variant="outlined" 

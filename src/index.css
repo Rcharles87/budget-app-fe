@@ -1,7 +1,7 @@
-#root{
+/* #root{
   background-color: red;
   height: 100vh;
-}
+} */
 
 .app-bg{
   background-color: #fff0d4;
@@ -9,18 +9,23 @@
 }
 
 .color-nav{
-  background-color: #DD614A;
+  background-color: #dd604ac4;
   border-radius: 10px;
+}
+.text-color-nav{
+  color: rgb(104, 54, 21);
+  font-weight: bolder;
+  font-size: larger;
 }
 
 
 .color-card .card:nth-child(odd) {
-  background-color: #73A580;
+  background-color: #73a5809f;
   border-radius: 3px;
 }
 
 .color-card .card:nth-child(even){
-  background-color: #F48668;
+  background-color: #f4866867;
   border-radius: 3px;
 }
   
