@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import Transaction from "./Transaction";
-import axios from "axios";
-import { TableBody, Table, TableRow, TableHead, TableCell } from "@mui/material";
-import { Card } from "react-bootstrap";
 import { currencyFormatter } from "../utils";
+import { Button } from "@mui/material";
+import axios from "axios";
+
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -22,14 +22,20 @@ function Transactions() {
             throw err;
         })
     },[])
+    console.log()
     
     const handleTotal = (transactionsArr) => {
-        // console.log(transactionsArr)
         let amounts = transactionsArr.map(price => price.amount).reduce((a,b) => a+ Number(b),0)
             setTotal(amounts)
     };
+
+    const handleColorChange = (total) => {
+        switch(total){
+            case total <= 0:
+
+        }
+    }
      
-    
 
     return (
         // <div>
@@ -53,13 +59,20 @@ function Transactions() {
             
         // </div>
        
-       
-<div>
+       <div>
+            <h2>Bank Account Total: <span style={(total < 0)? {color:"red"}: (total<100)? {color:"white"}:(total>1000)? {color:"green"}: null }>{currencyFormatter.format(total)}</span> </h2>
+            <Button variant="outlined" >graph</Button>
 
+
+            <div className="color-card">
             {transactions.map((transaction, index)=>{
                 return <Transaction key={index} transaction={transaction} index={index} />
             })}
             </div>
+          
+      
+      
+        </div>
     )
 }
 

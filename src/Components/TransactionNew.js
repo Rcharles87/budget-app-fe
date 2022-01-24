@@ -35,6 +35,7 @@ function TransactionNew() {
             <form onSubmit={handleSubmit}>
                 <label htmlFor="itemName">Item name:</label>
                 <input 
+                class="form-control"
                 id="itemName"
                 value={transaction.itemName}
                 onChange={handleTextChange}
@@ -43,6 +44,7 @@ function TransactionNew() {
                 />
                 <label htmlFor="amount">Amount:</label>
                 <input 
+                class="form-control"
                 id="amount"
                 value={transaction.amount}
                 onChange={handleTextChange}
@@ -51,6 +53,7 @@ function TransactionNew() {
                 />
                 <label htmlFor="date">Date:</label>
                 <input 
+                class="form-control"
                 id="date"
                 value={transaction.date}
                 onChange={handleTextChange}
@@ -59,6 +62,7 @@ function TransactionNew() {
                 />
                 <label htmlFor="from">From:</label>
                 <input 
+                class="form-control"
                 id="from"
                 value={transaction.from}
                 onChange={handleTextChange}
@@ -67,6 +71,7 @@ function TransactionNew() {
                 />
                 <label htmlFor="category">Category:</label>
                 <input 
+                class="form-control"
                 id="category"
                 value={transaction.category}
                 onChange={handleTextChange}

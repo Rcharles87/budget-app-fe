@@ -1,24 +1,29 @@
-/* .App{
-  width: 100vw;
+#root{
+  background-color: red;
   height: 100vh;
 }
 
-.nav-bar {
-  border: 1px solid black;
-  width: 100vw;
+.app-bg{
+  background-color: #fff0d4;
+  height: 100vh;
 }
 
-table {
-  display: flex;
-  align-items: center;
+.color-nav{
+  background-color: #DD614A;
+  border-radius: 10px;
 }
 
-thead {
-  background-color: lightgray;
 
+.color-card .card:nth-child(odd) {
+  background-color: #73A580;
+  border-radius: 3px;
 }
 
-table a{
-  text-decoration: none;
-  color: black;
-} */
+.color-card .card:nth-child(even){
+  background-color: #F48668;
+  border-radius: 3px;
+}
+  
+.detail-card{
+  background-color: #73A580;
+}

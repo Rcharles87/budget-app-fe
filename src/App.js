@@ -11,15 +11,18 @@ import { Container } from "react-bootstrap";
 
 function App() {
   return (
-    <Container className="my-4">
+    <div className="app-bg ">
+
+    <Container >
      <NavBar/>
-     <div style={{
+     <div 
+     style={{
        display: "grid",
        gridTemplateRows: "repeat(auto-fill, minmax(300px, 1fr))",
        gap: "1rem",
        alignItems: "flex-start"
-     }}
-     >
+      }}
+      >
 
      <Routes>
        <Route path="/" element={<HomePage/>}/>
@@ -30,6 +33,7 @@ function App() {
      </Routes>
      </div>
     </Container>
+       </div>
   );
 }
 

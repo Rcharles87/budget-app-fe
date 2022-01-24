@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
+import { Card } from "react-bootstrap"
+import { currencyFormatter } from "../utils";
+
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
@@ -31,29 +35,53 @@ function TransactionDetails() {
 
 
     return (
-        <div>
-            <div>
-                <h2>Item Name: {transaction.itemName}</h2>
-                <h2>Amount: {transaction.amount}</h2>
-                <h2>Date: {transaction.date}</h2>
-                <h2>From: {transaction.from}</h2>
-                <h2>Category: {transaction.category}</h2>
-            </div>
+        <Card>
+            <Card.Body className="detail-card">
+
+            <Card.Title className="justify-content-between align-items-baseline fw-normal mb-3">
+                <div>Item Name: {transaction.itemName}</div>
+                <div>Amount: {currencyFormatter.format(transaction.amount)}</div>
+                <div>Date: {transaction.date}</div>
+                <div>From: {transaction.from}</div>
+                <div>Category: {transaction.category}</div>
+            </Card.Title>
 
             <div>
+                <Button 
+                    style={{
+                        border: "1px solid #7A8B99",
+                        color: "#7A8B99"
+                    }}
+                    variant="outlined" 
+                    component={Link} 
+                    to={"/transactions"}
+                    >Back
+                </Button>
+                <Button 
+                    style={{
+                        border: "1px solid #7A8B99",
+                        color: "#7A8B99"
+                    }}
+                    variant="outlined" 
+                    component={Link} 
+                    to={`/transactions/${index}/edit`}
+                    >Edit
+                </Button>
 
-            <Link to={"/transactions"}>
-                <button>Back</button>
-            </Link>
-
-            <Link to={`/transactions/${index}/edit`}>
-                <button>Edit</button>
-            </Link>
-                <button onClick={handleDelete}>Delete</button>
+                <Button 
+                    style={{
+                        border: "1px solid #7A8B99",
+                        color: "#7A8B99"
+                    }}
+                    variant="outlined" 
+                    onClick={handleDelete}
+                    >Delete
+                </Button>
             </div>
      
+            </Card.Body>
             
-        </div>
+        </Card>
     )
 }
 

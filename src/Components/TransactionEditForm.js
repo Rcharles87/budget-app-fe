@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useParams, useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 import axios from 'axios';
 
 
@@ -32,9 +33,6 @@ function TransactionEditForm() {
         setTransaction({...transaction, [event.target.id]: event.target.value })
     };
 
-    // const handleDateChange = (event) => {
-
-    // }
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -48,10 +46,11 @@ function TransactionEditForm() {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="itemName">Item Name: </label>
+                <div className='mb-3'>
+                    <label for="inputName" class="form-label">Item Name: </label>
                     <input 
-                    id="itemName"
+                    class="form-control"
+                    id="inputName"
                     value={transaction.itemName}
                     onChange={handleTextChange}
                     placeholder="Item Name"
@@ -61,6 +60,7 @@ function TransactionEditForm() {
                 <div>
                     <label htmlFor="amount">Amount: </label>
                     <input 
+                    class="form-control"
                     id="amount"
                     value={transaction.amount}
                     onChange={handleTextChange}
@@ -71,6 +71,7 @@ function TransactionEditForm() {
                 <div>
                     <label htmlFor="date">Date: </label>
                     <input 
+                    class="form-control"
                     id="date"
                     value={transaction.date}
                     onChange={handleTextChange}
@@ -81,6 +82,7 @@ function TransactionEditForm() {
                 <div>
                     <label htmlFor="from">From: </label>
                     <input 
+                    class="form-control"
                     id="from"
                     value={transaction.from}
                     onChange={handleTextChange}
@@ -91,6 +93,7 @@ function TransactionEditForm() {
                 <div>
                     <label htmlFor="category">Category: </label>
                     <input 
+                    class="form-control"
                     id="category"
                     value={transaction.category}
                     onChange={handleTextChange}
@@ -98,11 +101,28 @@ function TransactionEditForm() {
                     type="text"
                     />
                 </div>
-                <input type="submit" />
+                <br />
+                <Button 
+                    style={{
+                        border: "1px solid #7A8B99",
+                        color: "#7A8B99"
+                    }}
+                    variant="outlined" 
+                    type='submit'
+                    >Submit
+                </Button>
+                <Button 
+                    style={{
+                        border: "1px solid #7A8B99",
+                        color: "#7A8B99"
+                    }}
+                    variant="outlined" 
+                    component={Link} 
+                    to={`/transactions/${index}`}
+                    >Back
+                </Button>
             </form>
-            <Link to={`/transactions/${index}`}>
-            <button>Back</button>
-            </Link>
+            <br />
             
         </div>
     )
