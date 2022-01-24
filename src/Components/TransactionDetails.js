@@ -49,8 +49,8 @@ function TransactionDetails() {
             <div>
                 <Button 
                     style={{
-                        border: "1px solid #7A8B99",
-                        color: "#7A8B99"
+                        border: "1px solid #C5C392",
+                        color: "#C5C392"
                     }}
                     variant="outlined" 
                     component={Link} 
@@ -59,8 +59,8 @@ function TransactionDetails() {
                 </Button>
                 <Button 
                     style={{
-                        border: "1px solid #7A8B99",
-                        color: "#7A8B99"
+                        border: "1px solid #C5C392",
+                        color: "#C5C392"
                     }}
                     variant="outlined" 
                     component={Link} 
@@ -70,8 +70,8 @@ function TransactionDetails() {
 
                 <Button 
                     style={{
-                        border: "1px solid #7A8B99",
-                        color: "#7A8B99"
+                        border: "1px solid #C5C392",
+                        color: "#C5C392"
                     }}
                     variant="outlined" 
                     onClick={handleDelete}

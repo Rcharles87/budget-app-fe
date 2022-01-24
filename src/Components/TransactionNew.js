@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
+import { Button } from "@mui/material";
 import axios from "axios"
 
 const API = process.env.REACT_APP_API_URL;
@@ -78,7 +79,25 @@ function TransactionNew() {
                 placeholder="Category"
                 type="text" 
                 />
-                <input type="submit" />
+                   <Button 
+                    style={{
+                        border: "1px solid #DD614A",
+                        color: "#DD614A"
+                    }}
+                    variant="outlined" 
+                    type='submit'
+                    >Submit
+                </Button>
+                <Button 
+                    style={{
+                        border: "1px solid #DD614A",
+                        color: "#DD614A"
+                    }}
+                    variant="outlined" 
+                    component={Link} 
+                    to={`/transactions`}
+                    >Back
+                </Button>
 
             </form>
             

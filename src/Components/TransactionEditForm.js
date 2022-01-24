@@ -104,8 +104,8 @@ function TransactionEditForm() {
                 <br />
                 <Button 
                     style={{
-                        border: "1px solid #7A8B99",
-                        color: "#7A8B99"
+                        border: "1px solid #DD614A",
+                        color: "#DD614A"
                     }}
                     variant="outlined" 
                     type='submit'
@@ -113,8 +113,8 @@ function TransactionEditForm() {
                 </Button>
                 <Button 
                     style={{
-                        border: "1px solid #7A8B99",
-                        color: "#7A8B99"
+                        border: "1px solid #DD614A",
+                        color: "#DD614A"
                     }}
                     variant="outlined" 
                     component={Link} 
