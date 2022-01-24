@@ -60,7 +60,7 @@ function Transactions() {
         // </div>
        
        <div>
-            <h2>Bank Account Total: <span style={(total < 0)? {color:"red"}: (total<1000)? {color:"white", backgroundColor:"grey"}:(total>1000)? {color:"green"}: null }>{currencyFormatter.format(total)}</span> </h2>
+            <h2>Bank Account Total: <span style={(total < 0)? {color:"red"}: (total<1000)? {color:"grey"}:(total>1000)? {color:"green"}: null }>{currencyFormatter.format(total)}</span> </h2>
             <Button variant="outlined" >graph</Button>
 
 
