@@ -11,7 +11,7 @@ import { Container } from "react-bootstrap";
 
 function App() {
   return (
-    <div className="app-bg ">
+    <div className="app-bg">
 
     <Container >
      <NavBar/>

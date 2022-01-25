@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Transaction from "./Transaction";
-import { currencyFormatter } from "../utils";
+import { currencyFormatter, colorChange } from "../utils";
 import { Button } from "@mui/material";
 import axios from "axios";
 
@@ -35,8 +35,17 @@ function Transactions() {
     return (
        
        <div>
-            <h2 className="text-total">Bank Account Total: <span style={(total < 0)? {color:"red"}: (total<1000)? {color:"grey"}:(total>1000)? {color:"green"}: null }>{currencyFormatter.format(total)}</span> </h2>
-            <Button variant="outlined" component={Link} to={"/"}>graph</Button>
+            <h2 className="text-total">Bank Account Total: <span style={{color:colorChange(total)}}>{currencyFormatter.format(total)}</span> </h2>
+            <Button   
+            style={{
+                border: "1px solid #DD614A",
+                color: "#DD614A"
+                }} 
+            variant="outlined" 
+            component={Link} 
+            to={"/"}
+            >graph
+            </Button>
 
 
             <div className="color-card">

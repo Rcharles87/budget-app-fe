@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import { Card } from "react-bootstrap"
-import { currencyFormatter } from "../utils";
+import { currencyFormatter, dateFormatter } from "../utils";
 
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
 function TransactionDetails() {
-    const [transaction, setTransaction] = useState([]);
+    const [transaction, setTransaction] = useState({});
     let { index } = useParams();
     let navigate = useNavigate();
 
@@ -41,7 +41,7 @@ function TransactionDetails() {
             <Card.Title className="justify-content-between align-items-baseline fw-normal mb-3">
                 <div>Item Name: {transaction.itemName}</div>
                 <div>Amount: {currencyFormatter.format(transaction.amount)}</div>
-                <div>Date: {transaction.date}</div>
+                <div>Date: {dateFormatter(transaction.date)}</div>
                 <div>From: {transaction.from}</div>
                 <div>Category: {transaction.category}</div>
             </Card.Title>

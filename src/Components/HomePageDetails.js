@@ -1,11 +1,11 @@
-import { PieChart, Pie} from 'recharts'
+import { PieChart } from "react-minimal-pie-chart";
 import { Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import axios from "axios"
 
+
 function HomePageDetails() {
-    const [transactions, setTransactions] = useState([]);
-    const [data , setData] = useState([])
+    const [dataInfo , setDataInfo] = useState([])
 
     const API= process.env.REACT_APP_API_URL
 
@@ -13,7 +13,6 @@ function HomePageDetails() {
     useEffect(()=>{
         axios.get(`${API}/transactions`)
         .then((res)=>{
-            setTransactions(res.data);
             handleGraphData(res.data)
         }).catch((err)=>{
             throw err;
@@ -22,11 +21,11 @@ function HomePageDetails() {
     
     const handleGraphData = (dataArr) =>{
         let newData = dataArr.map((transaction)=>{
-            return {name:transaction.itemName, amounts:Number(transaction.amount)}
+            return {title:transaction.itemName, value: Math.abs(Number(transaction.amount)), color: transaction.amount >0 ?   "green": "red"}
         })
-        setData(newData)
+        setDataInfo(newData)
     } 
-    console.log(data)
+    console.log(dataInfo)
     // const data =
     // [
     //     {name: 'Geeksforgeeks', students: 400},
@@ -34,13 +33,20 @@ function HomePageDetails() {
     //     {name: 'Geek-i-knack', students: 200},
     //     {name: 'Geek-o-mania', students: 1000}
     //   ];
-// console.log(dataGraph)
     return (
         <div>
+
+            <h1> Account Snap Shot:</h1>
             <Link to={"/transactions"}>
-            <PieChart width={700} height={700}>
-          <Pie data={data} dataKey="amounts" outerRadius={250} fill="green" />
-        </PieChart>
+            <PieChart 
+                data = {dataInfo}
+                lineWidth={30}
+                radius={40}
+                label={({ dataEntry }) => dataEntry.value}
+                labelPosition={112}
+                labelStyle={{fontSize:"3px"}}
+                paddingAngle={5}
+            />
 
       </Link>
         </div>
