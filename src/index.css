@@ -1,11 +1,21 @@
 /* #root{
-  background-color: red;
+  background-color: #fff0d4;
   height: 100vh;
 } */
 
+body {
+  background-color: #fff0d4 !important;
+}
+
+* {
+
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
 .app-bg{
-  background-color: #fff0d4;
-  height: 100vh;
+  background-color: #fff0d4 !important;
 }
 
 .color-nav{
@@ -16,6 +26,12 @@
   color: rgb(104, 54, 21);
   font-weight: bolder;
   font-size: larger;
+}
+
+.text-total{
+  color: rgb(104, 54, 21);
+  font-style: italic;
+  font-family: Verdana ;
 }
 
 

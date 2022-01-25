@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Card } from "react-bootstrap";
-import { currencyFormatter } from "../utils";
+import { currencyFormatter,  } from "../utils";
 import { Button } from "@mui/material";
 import axios from "axios";
 
@@ -19,6 +19,8 @@ function Transaction({transaction, index}) {
         )
     }
 
+
+
     console.log()
     return (
 
@@ -28,7 +30,7 @@ function Transaction({transaction, index}) {
                     <Card.Title className="d-flex justify-content-between align-items-baseline fw-normal mb-3">
                         <div >{transaction.itemName}</div>
                         <div>{currencyFormatter.format(transaction.amount)}</div>
-                        <div className="text-muted fs-6 ms-1">{(transaction.date)}</div>
+                        <div className="text-muted fs-6 ms-1">{transaction.date}</div>
                     </Card.Title>
 
                         <Button 

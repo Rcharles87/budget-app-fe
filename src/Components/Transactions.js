@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Transaction from "./Transaction";
 import { currencyFormatter } from "../utils";
 import { Button } from "@mui/material";
@@ -29,39 +30,13 @@ function Transactions() {
             setTotal(amounts)
     };
 
-    const handleColorChange = (total) => {
-        switch(total){
-            case total <= 0:
-
-        }
-    }
      
 
     return (
-        // <div>
-        //     <h2>Bank Account Total: ${total} </h2>
-        //     <section>
-        //         <Table>
-        //             <TableRow>
-        //                 <TableHead>
-        //                     <TableCell>Date</TableCell>
-        //                     <TableCell>Item Name</TableCell>
-        //                     <TableCell>Amount</TableCell>
-        //                 </TableHead>
-        //             </TableRow>
-        //             <TableBody>
-        //                 {transactions.map((transaction, index)=>{
-        //                     return <Transaction key={index} transaction={transaction} index={index} />
-        //                 })}
-        //             </TableBody>
-        //         </Table>
-        //     </section>
-            
-        // </div>
        
        <div>
-            <h2>Bank Account Total: <span style={(total < 0)? {color:"red"}: (total<1000)? {color:"grey"}:(total>1000)? {color:"green"}: null }>{currencyFormatter.format(total)}</span> </h2>
-            <Button variant="outlined" >graph</Button>
+            <h2 className="text-total">Bank Account Total: <span style={(total < 0)? {color:"red"}: (total<1000)? {color:"grey"}:(total>1000)? {color:"green"}: null }>{currencyFormatter.format(total)}</span> </h2>
+            <Button variant="outlined" component={Link} to={"/"}>graph</Button>
 
 
             <div className="color-card">
