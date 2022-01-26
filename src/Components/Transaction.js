@@ -4,7 +4,7 @@ import { currencyFormatter, dateFormatter  } from "../utils";
 import { Button } from "@mui/material";
 import axios from "axios";
 
-function Transaction({transaction, index}) {
+function Transaction({transaction, index, setTransactions}) {
 
 
     const API = process.env.REACT_APP_API_URL;
@@ -14,7 +14,8 @@ function Transaction({transaction, index}) {
         console.log(event)
         axios.delete(`${API}/transactions/${index}`)
         .then(
-            window.location.reload(false)
+            res=>setTransactions(res.data)
+            // window.location.reload(false)
             // navigate("/transactions")
         )
     }

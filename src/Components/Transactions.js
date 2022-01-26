@@ -49,8 +49,8 @@ function Transactions() {
 
 
             <div className="color-card">
-            {transactions.map((transaction, index)=>{
-                return <Transaction key={index} transaction={transaction} index={index} />
+            {transactions.map((transaction, index, )=>{
+                return <Transaction key={index} transaction={transaction} index={index} setTranasctions={setTransactions}/>
             })}
             </div>
           
