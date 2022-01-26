@@ -7,22 +7,20 @@ import axios from "axios";
 function Transaction({transaction, index, setTransactions}) {
 
 
-    const API = process.env.REACT_APP_API_URL;
-    // const navigate= useNavigate()
+    // const API = process.env.REACT_APP_API_URL;
+    // // const navigate= useNavigate()
 
-    const handleDelete = (event) => {
-        console.log(event)
-        axios.delete(`${API}/transactions/${index}`)
-        .then(
-            res=>setTransactions(res.data)
-            // window.location.reload(false)
-            // navigate("/transactions")
-        )
-    }
-
+    // const handleDelete = (event) => {
+    //     axios.delete(`${API}/transactions/${index}`)
+    //     .then(
+    //         res=>setTransactions(res.data)
+    //         // window.location.reload(false)
+    //         // navigate("/transactions")
+    //     )
+    // }
 
 
-    console.log()
+
     return (
 
 
@@ -44,7 +42,7 @@ function Transaction({transaction, index, setTransactions}) {
                             to={`/transactions/${index}`}
                             >View Transaction
                         </Button>
-                        <Button 
+                        {/* <Button 
                             style={{
                                 border: "1px solid #DD614A",
                                 color: "#DD614A"
@@ -52,7 +50,7 @@ function Transaction({transaction, index, setTransactions}) {
                             variant="outlined" 
                             onClick={handleDelete}
                             >Delete
-                        </Button>
+                        </Button> */}
                 </Card.Body>
             </Card>
     )

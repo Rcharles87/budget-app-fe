@@ -23,10 +23,9 @@ function Transactions() {
             throw err;
         })
     },[])
-    console.log()
     
     const handleTotal = (transactionsArr) => {
-        let amounts = transactionsArr.map(price => price.amount).reduce((a,b) => a+ Number(b),0)
+        let amounts = transactionsArr.map(price => price.amount).reduce((a,b) => a + Number(b),0)
             setTotal(amounts)
     };
 
@@ -50,7 +49,7 @@ function Transactions() {
 
             <div className="color-card">
             {transactions.map((transaction, index, )=>{
-                return <Transaction key={index} transaction={transaction} index={index} setTranasctions={setTransactions}/>
+                return <Transaction key={index} transaction={transaction} index={index} setTransactions={setTransactions}/>
             })}
             </div>
           
